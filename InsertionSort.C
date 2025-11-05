@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+void insertionSort1(int n, int arr[]) {
+    int key = arr[n - 1];  
+    int j = n - 2;
+
+ 
+    while (j >= 0 && arr[j] > key) {
+        arr[j + 1] = arr[j];
+
+  
+        for (int k = 0; k < n; k++) {
+            printf("%d ", arr[k]);
+        }
+        printf("\n");
+
+        j--;
+    }
+    arr[j + 1] = key;
+
+    for (int k = 0; k < n; k++) {
+        printf("%d ", arr[k]);
+    }
+    printf("\n");
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+
+    int arr[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    insertionSort1(n, arr);
+
+    return 0;
+}
